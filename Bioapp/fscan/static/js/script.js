@@ -312,6 +312,8 @@ if (startcapture) {
             capture_checker.innerHTML = "";
             var image = document.createElement("img");
             image.id = "fingerprintimage";
+            image.height = 80;
+            image.width = 80;
             image.src = localStorage.getItem("imageSrc");
             capture_checker.style = 'display: block;';
             capture_checker.appendChild(image);

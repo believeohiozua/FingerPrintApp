@@ -10,15 +10,17 @@ export class Home extends Component {
     static propTypes = {
         auth: PropTypes.object.isRequired,
         logout: PropTypes.func.isRequired,
+        authmsgchecker: PropTypes.object.isRequired,
     };
 
 
     render() {
         const { auth } = this.props
+        const { authmsgchecker } = this.props
         console.log('auth', auth)
         return (
             <Fragment>
-                {auth.token === null || auth.token === undefined ? <Login /> :
+                {auth.token === null || auth.token === undefined || authmsgchecker.msg.detail === "Invalid token." ? <Login /> :
                     <div>
                         <p className="text-center font-weight-bold h3 py-5">BIO REGISTRATION AND VERIFICATION</p>
                         <div className="row">
@@ -62,6 +64,7 @@ export class Home extends Component {
 
 const mapStateToProps = (state) => ({
     auth: state.authReducer,
+    authmsgchecker: state.errors,
 });
 
 export default connect(mapStateToProps, { logout })(Home);

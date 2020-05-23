@@ -8,7 +8,7 @@ export class NavBar extends Component {
     static propTypes = {
         auth: PropTypes.object.isRequired,
         logout: PropTypes.func.isRequired,
-        authmsgchecker: PropTypes.string,
+        authmsgchecker: PropTypes.object,
     };
     render() {
         const { auth } = this.props
@@ -17,7 +17,7 @@ export class NavBar extends Component {
             <div className="pt-3">
                 {auth.token !== undefined && auth.token !== null ?
                     <div className="container">
-                        {authmsgchecker == "Invalid token." ?
+                        {authmsgchecker.detail == "Invalid token." ?
                             <Link onClick={this.props.logout} to="/bio/login"
                                 className="btn-outline-primary btn-xs">
                                 <small className="">LOGIN</small>

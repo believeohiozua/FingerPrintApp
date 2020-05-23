@@ -65,8 +65,7 @@ class ScanForm extends Component {
 
                                     <div id="content-capture">
                                         <span id="spinner"></span>
-                                        <img id="fgp_img" src={'../../../static/img/fingerprint.png'} alt="fingerprint" height="80" width="80" />
-
+                                        {/* <img id="fgp_img" src={'../../../static/img/fingerprint.png'} alt="fingerprint" height="80" width="80" /> */}
                                         <div id="imagediv"></div>
 
                                         <div className="py-2" id="fingersample"> </div>
@@ -74,7 +73,7 @@ class ScanForm extends Component {
 
                                     <div id="startcap" className="d-block">
                                         <button type="button" id="startcapture" className="btn-success btn-xs">
-                                            Start FingerPrint Capture
+                                            Capture FingerPrint
                                     </button>
                                     </div>
 

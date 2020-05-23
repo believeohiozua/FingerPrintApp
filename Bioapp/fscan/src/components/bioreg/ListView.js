@@ -11,10 +11,9 @@ import SearchBar from "./SearchBar"
 export class ListView extends Component {
 
 
-    // static propTypes = {
-    //     list_reg_data: PropTypes.array.isRequired,
-
-    // };
+    static propTypes = {
+        list_reg_data: PropTypes.array,
+    };
 
     loadNextData = () => {
         const { next } = this.props
@@ -31,9 +30,20 @@ export class ListView extends Component {
         }
     }
 
+    stateChange = () => {
+        const { list_reg_data } = this.props
+        setTimeout(function () {
+            console.log('buikData', list_reg_data)
+            if (list_reg_data.length == 0) {
+                document.getElementById('loading').innerHTML = "NO AVALIBLE DATA"
+            }
+        }, 3000);
+    }
     componentDidMount() {
         this.props.getData();
+        this.stateChange();
     }
+
     render() {
         const next = this.props.next
         const previous = this.props.previous
@@ -76,11 +86,16 @@ export class ListView extends Component {
                                 </div>
                             )
                         }) :
-                            <div>
-                                <p> "NO AVALIBLE DATA TO DISPLAY"</p>
+                            <div className="text-center p-5">
+                                <div>
+                                    <p>
+                                        <span id="loading" className="text-center font-weight-bold h5 pt-3">
+                                            Loading....&ensp;<span className="spinner-border text-secondary"></span>
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
                         }
-
                         <div className="col-md-12">
                             <div className="text-right align-items-center float-right">
                                 {next !== null ?

@@ -1,6 +1,7 @@
 html, body{
     width: 100%;
-    overflow-x: hidden; 
+    height: 100%;
+    overflow: hidden; 
 }
 .dropdown {
     position: relative;
@@ -75,7 +76,7 @@ html, body{
 #startcapture,
 #capturefgp,
 #stopcapture {
-border-radius: 25px;
+border-radius: 30px;
 }
 
 
@@ -83,4 +84,8 @@ border-radius: 25px;
     display: none;
 }
 
- 
+
+/* #not_found{
+    display: none;
+   
+} */

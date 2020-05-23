@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, RedirBrowserRouterect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { Provider as AlertProvider } from 'react-alert';
@@ -35,6 +35,7 @@ class App extends Component {
                             <NavBar />
                             <Alerts />
                             <div className="container">
+                                {/* <BrowserRouter> */}
                                 <Switch>
                                     <PrivateRoute exact path='/' component={Home} />
                                     <Route exact path="/bio/register" component={RegForm} />
@@ -44,6 +45,7 @@ class App extends Component {
                                     <Route exact path="/bio/signup" component={Register} />
                                     <Route exact path="/bio/login" component={Login} />
                                 </Switch>
+                                {/* </BrowserRouter> */}
                             </div>
                         </Fragment>
                     </Router>

@@ -75,7 +75,7 @@ class UploadForm extends Component {
             <div className="pb-4 mx-auto">
                 <hr />
                 <div className="shadow pl-5 border border-info" id="upload-sec">
-                    <p className="font-weight-bold pt-3 pb-4"> Verify By Upload Sample</p>
+                    <p className="font-weight-bold pt-3"> Verify By Upload Sample</p>
                     <form onSubmit={this.sendData}>
                         <fieldset>
                             <div className="form-group">

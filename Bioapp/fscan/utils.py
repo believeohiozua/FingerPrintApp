@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 import glob, os
-from keras.models import load_model
+from tensorflow import keras
 import warnings
 import base64
 from django.db.models import Q
@@ -38,7 +38,7 @@ def process_img(raw_img):
 def Predicter (specimen):
     specimen = specimen.get('upload')
     specimen_to_array = process_img(base64converter(specimen))     
-    model = load_model('model.h5')
+    model =keras.models.load_model('model.h5')
     # get_all_fingerprints= Register.objects.values_list('right_thumb' ,'right_index','left_thumb','left_index').distinct()
     get_all_fingerprints= Register.objects.values_list('right_thumb_img' ,'right_index_img','left_thumb_img','left_index_img').distinct()
    
