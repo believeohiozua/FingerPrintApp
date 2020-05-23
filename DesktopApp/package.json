@@ -1,0 +1,14 @@
+{
+  "name": "biodata",
+  "version": "1.0.0",
+  "description": "Biometric project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Believe Ohiozua",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^8.2.5"
+  }
+}
